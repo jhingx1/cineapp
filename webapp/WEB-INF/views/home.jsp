@@ -8,14 +8,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-	
 <!-- Variable al modelo con la URL relativa a resources -->
 <spring:url value="/resources" var="urlPublic" />
+
+<!-- Bootrap -->
+<link href="${urlPublic}/bootstrap/css/bootstrap.min.css" rel="stylesheet">	
+
+
 <title>Bienvenido a CineApp</title>
 </head>
 <body>
