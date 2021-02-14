@@ -1,6 +1,7 @@
 package com.emp.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,6 +16,8 @@ import com.emp.model.Pelicula;
 
 @Controller
 public class HomeController {
+	
+	private SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
 
 	@RequestMapping(value="/home",method=RequestMethod.GET)
 	public String goHome() {
@@ -28,6 +31,8 @@ public class HomeController {
 		List<Pelicula> peliculas = getLista();
 
 		model.addAttribute("peliculas",peliculas);
+		//para comparar con la fecha de hoy
+		model.addAttribute("fechaBusqueda", dateformat.format(new Date()));
 		
 		return "home";
 	}
@@ -89,18 +94,11 @@ public class HomeController {
 		}
 	}
 	
-	@RequestMapping(value="/detail/{id}",method=RequestMethod.GET)
-	public String mostrarDetalle(Model model,@PathVariable("id") int idPelicula) {
+	@RequestMapping(value="/detail/{id}/{fecha}",method=RequestMethod.GET)
+	public String mostrarDetalle(Model model,@PathVariable("id") int idPelicula,@PathVariable("fecha") String fecha) {
 		
 		System.out.println("idPelicula["+idPelicula+"]");
-		
-		String tituloPelicula = "Iron Man";
-		int duracion = 130;
-		double precio = 14.5;
-		
-		model.addAttribute("tituloPelicula", tituloPelicula);
-		model.addAttribute("duracion", duracion);
-		model.addAttribute("precio", precio);
+		System.out.println("fecha["+fecha+"]");
 		
 		return "detalle";
 	}
