@@ -6,8 +6,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.emp.model.Pelicula;
 
@@ -18,20 +20,6 @@ public class HomeController {
 	public String goHome() {
 		return "home";
 	}
-	
-//	@RequestMapping(value="/",method=RequestMethod.GET)
-//	public String mostrarPrincipal(Model model) {
-//		
-//		System.out.println("principal");
-//		List<String> peliculas = new LinkedList<>();
-//		peliculas.add("Rapido y Furiso");
-//		peliculas.add("El Aro 2");
-//		peliculas.add("Iron Man");
-//		
-//		model.addAttribute("peliculas",peliculas);
-//		
-//		return "home";
-//	}
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {
@@ -101,8 +89,10 @@ public class HomeController {
 		}
 	}
 	
-	@RequestMapping(value="/detail")
-	public String mostrarDetalle(Model model) {
+	@RequestMapping(value="/detail/{id}",method=RequestMethod.GET)
+	public String mostrarDetalle(Model model,@PathVariable("id") int idPelicula) {
+		
+		System.out.println("idPelicula["+idPelicula+"]");
 		
 		String tituloPelicula = "Iron Man";
 		int duracion = 130;
