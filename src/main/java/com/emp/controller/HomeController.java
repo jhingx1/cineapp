@@ -94,8 +94,11 @@ public class HomeController {
 		}
 	}
 	
-	@RequestMapping(value="/detail/{id}/{fecha}",method=RequestMethod.GET)
-	public String mostrarDetalle(Model model,@PathVariable("id") int idPelicula,@PathVariable("fecha") String fecha) {
+//	@RequestMapping(value="/detail/{id}/{fecha}",method=RequestMethod.GET)
+//	public String mostrarDetalle(Model model,@PathVariable("id") int idPelicula,@PathVariable("fecha") String fecha) {
+	
+	@RequestMapping(value="/detail",method=RequestMethod.GET)
+	public String mostrarDetalle(Model model,@RequestParam("idMovie") int idPelicula,@RequestParam("fecha") String fecha) {
 		
 		System.out.println("idPelicula["+idPelicula+"]");
 		System.out.println("fecha["+fecha+"]");
