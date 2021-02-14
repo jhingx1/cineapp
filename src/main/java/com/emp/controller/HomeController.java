@@ -66,19 +66,32 @@ public class HomeController {
 			pelicula2.setClasificacion("A");
 			pelicula2.setGenero("Infantil");
 			pelicula2.setFechaEstreno(formatter.parse("20-05-2017"));
+			pelicula2.setImagen("bella.png");
 			
 			Pelicula pelicula3 = new Pelicula();
-			pelicula3.setId(1);
+			pelicula3.setId(3);
 			pelicula3.setTitulo("Contratiempo");
 			pelicula3.setDuracion(106);
 			pelicula3.setClasificacion("B");
 			pelicula3.setGenero("Thriller");
 			pelicula3.setFechaEstreno(formatter.parse("28-05-2017"));
+			pelicula3.setImagen("contratiempo.png");
+			
+			Pelicula pelicula4 = new Pelicula();
+			pelicula4.setId(3);
+			pelicula4.setTitulo("Kong La isla Calavera");
+			pelicula4.setDuracion(118);
+			pelicula4.setClasificacion("B");
+			pelicula4.setGenero("Accion y Aventura");
+			pelicula4.setFechaEstreno(formatter.parse("06-06-2018"));
+			pelicula4.setImagen("kong.png");
+			pelicula4.setEstatus("Inactiva");
 			
 			//agregamos los objetos pelicula a la lista
 			lista.add(pelicula1);
 			lista.add(pelicula2);
 			lista.add(pelicula3);
+			lista.add(pelicula4);
 			
 			return lista;
 			
